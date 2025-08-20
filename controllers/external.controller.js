@@ -279,7 +279,7 @@ const getUserDetails = async (req, res) => {
 
     try {
 
-        const userDetails = await usersModel.findOne({ _id: userId, is_subscribed: true, is_del: false });
+        const userDetails = await usersModel.findOne({ _id: userId, is_del: false });
         const userPreference = await preferenceModel.findOne({ user_id: userId });
         const userPsycho = await psychometricAnswerModel.findOne({ user_id: userId });
 
